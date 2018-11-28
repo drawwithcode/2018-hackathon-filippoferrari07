@@ -14,8 +14,23 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
+  background(239, 226, 83);
+
   imageMode(CENTER);
   image(myImage, width / 2, height / 2, myImage.width / 3 * 2, myImage.height / 3 * 2);
+
+  push();
+  noStroke();
+  fill(219, 214, 199);
+  rect(0,0,width,height/7);
+  pop();
+  push();
+  textAlign(CENTER);
+  textSize(20);
+  textFont('Special Elite');
+  text('If you want to listen to the music press the play button',width/2, 30);
+  text('otherwise click on the screen to see what is going to happen.',width/2, 50);
+  pop();
 
   //analyzer
   analyzer = new p5.Amplitude();
@@ -97,6 +112,7 @@ function Meth(_x, _y) {
   }
 }
 
+//tasto play triangolo
 function polygon(x, y, radius, npoints) {
   var angle = TWO_PI / npoints;
   beginShape();
